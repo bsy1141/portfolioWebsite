@@ -1,4 +1,14 @@
+/*
+html{
+    font-family: 'Open Sans', sans-serif;
+}
+*/
+
 .navbar__logo__img {
   width: 20px;
   height: 25px;
+}
+.home__profile {
+  width: 150px;
+  height: 200px;
 }

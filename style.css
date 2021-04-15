@@ -11,6 +11,8 @@
   --color-blue: #73aace;
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
+  --color-medium-orange: #fb9b50;
+  --color-dark-orange: #f98125;
   --color-black: #000000;
 
   /* Font size */
@@ -49,6 +51,13 @@ ul {
   padding-left: 0;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
 h1 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
@@ -80,7 +89,7 @@ p {
 #navbar {
   display: flex;
   justify-content: space-between;
-  background-color: var(--color-pink);
+  background-color: var(--color-orange);
   align-items: center;
   color: var(--color-white);
   padding: 16px;
@@ -107,5 +116,28 @@ p {
 }
 
 .navbar__menu__item:hover {
-  background-color: var(--color-dark-pink);
+  background-color: var(--color-medium-orange);
+}
+
+#home {
+  background: url(imgs/home-background.png) center/cover no-repeat;
+  padding: 40px;
+  text-align: center;
+}
+
+.home__profile {
+  width: 250px;
+  height: 250px;
+  border: 2px var(--color-white) solid;
+  border-radius: 50%;
+}
+
+.home__contact {
+  font-size: var(--weight-regular);
+  font-weight: var(--weight-bold);
+  margin: 24px;
+  padding: 8px 12px;
+  border: 2px solid var(--color-dark-orange);
+  border-radius: var(--size-border-radius);
+  color: var(--color-dark-orange);
 }

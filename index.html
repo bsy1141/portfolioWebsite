@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Young's Portfolio</title>
+    <!-- 검색을 위한 메타데이터-->
     <meta name="description" content="Portfolio for Front-End Developer Seo Young">
     <meta name="author" content="BAE SEO YOUNG">
     <link rel="icon" type="image/png" href="imgs/favicon.png"/>
+    <!-- icon 사용을 위한 연결 -->
     <script 
         src="https://kit.fontawesome.com/5f2ce31b3c.js" 
         crossorigin="anonymous">
     </script>
+    <!-- font 사용을 위한 연결 -->
     <link 
         rel="preconnect" 
         href="https://fonts.gstatic.com">
     <link 
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" 
         rel="stylesheet">
+    <!-- css연결 -->
     <link rel="stylesheet" href="style.css"/>
+    <!--JavaScript 연결-->
     <script src="main.js" defer></script>
 </head>
 <body>
@@ -53,16 +58,16 @@
         </button>
     </section>
     <!-- About Me-->
-    <section id="about"> 
+    <section id="about" class="section"> 
         <h1>About me</h1>
-        <p>안녕하세요 저는 배서영이고 프론트 엔지니어를 꿈꾸는 소프트웨어 공학도입니다.<br>
+        <p>안녕하세요 저는 프론트 엔지니어를 꿈꾸는 소프트웨어 공학도입니다.<br>
         열심히 배워서 나만의 서비스를 만들고 싶습니다.</p>
         <div class="about__majors">
             <div class="major">
                 <div class="major__icon">
                     <i class="fab fa-html5"></i>
                 </div>
-                <div class="major__title">Front-End</div>
+                <h2 class="major__title">Front-End</h2>
                 <div class="major__description">HTML, CSS, JavaScript
                     <br/>React, Web APIs
                 </div>
@@ -71,28 +76,30 @@
                 <div class="major__icon">
                     <i class="fas fa-mobile"></i>
                 </div>
-                <div class="major__title">Mobile</div>
+                <h2 class="major__title">Mobile</h2>
                 <div class="major__description">Android Studio</div>
             </div>
             <div class="major">
                 <div class="major__icon">
                     <i class="fas fa-server"></i>
                 </div>
-                <div class="major__title">Back-End</div>
+                <h2 class="major__title">Back-End</h2>
                 <div class="major__description">Java, JavaScript, PHP
                 </div>
             </div>
         </div>
         <div class="about__jobs">
             <div class="job">
-              <img src="imgs/symbol.png" alt="sookmyung" class="job__logo">  
-              <p class="job__name">숙명여자대학교 IT공학과 재학</p>
-              <p class="job__period">2018~</p>
+              <img src="imgs/symbol.png" alt="sookmyung" class="job__logo"> 
+              <div class="job__description">
+                  <p class="job__name">숙명여자대학교 IT공학과 재학</p>
+                  <p class="job__period">2018~</p>
+              </div> 
             </div>
         </div>
     </section>
     <!-- Skills -->
-    <section id="skills">
+    <section id="skills" class="section">
         <h1>Skills</h1>
         <h2>Skills & Attributes</h2>
         <p></p>
@@ -164,7 +171,7 @@
         </div>
     </section>
     <!-- Work -->
-    <section id="work">
+    <section id="work" class="section">
         <h1>My work</h1>
         <h3>Projects</h3>
         <div class="work__categories">
@@ -203,7 +210,7 @@
         </div>
     </section>
     <!-- Testimonial -->
-    <section id="testimonial">
+    <section id="testimonial" class="section">
         <h1>Testimonials</h1>
         <h3>See what they say about me</h3>
         <div class="testimonials">
@@ -240,7 +247,7 @@
         </div>
     </section>
     <!-- Contact -->
-    <section id="contact">
+    <section id="contact" class="section">
         <h1 class="contact__title">Let's talk</h1>
         <h2 class="contact__email">bsy1141@naver.com</h2>
         <div class="contact__links">

@@ -89,6 +89,17 @@ p {
   margin: 4px 0;
 }
 
+.section {
+  padding: 50px;
+  text-align: center;
+  margin: auto;
+}
+
+.section__bg {
+  max-width: 1200px;
+  margin: auto;
+}
+
 #navbar {
   display: flex;
   justify-content: space-between;
@@ -143,13 +154,6 @@ p {
   border: 2px solid var(--color-dark-orange);
   border-radius: var(--size-border-radius);
   color: var(--color-dark-orange);
-}
-
-.section {
-  padding: 50px;
-  text-align: center;
-  max-width: 1200px;
-  margin: auto;
 }
 
 .about__majors {
@@ -213,4 +217,59 @@ p {
 
 .job__period {
   font-size: var(--font-micro);
+}
+
+#skills {
+  background: var(--color-yellow);
+}
+
+.skillset {
+  display: flex;
+  background-color: var(--color-light-grey);
+  margin: 20px 0;
+  color: var(--color-light-white);
+}
+
+.skiillset__title {
+  color: var(--color-white);
+}
+
+.skillset__left {
+  flex-basis: 60%;
+  background-color: var(--color-dark-grey);
+  padding: 20px 40px;
+}
+
+.skill {
+  margin-bottom: 25px;
+}
+
+.skill_description {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-micro);
+}
+
+.skill_bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-light-grey);
+}
+
+.skill_value {
+  height: 3px;
+  background-color: var(--color-orange);
+}
+
+.skillset__right {
+  flex-basis: 40%;
+}
+
+.tools {
+  background-color: var(--color-grey);
+}
+
+.tools,
+.etc {
+  padding: 20px;
 }

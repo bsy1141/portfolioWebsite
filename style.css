@@ -354,6 +354,10 @@ p {
   margin: 2px;
 }
 
+.project.invisible {
+  display: none;
+}
+
 .project__img {
   width: 100%;
   height: 100%;
@@ -384,14 +388,14 @@ p {
 
 .project__description h3:after {
   content: "";
-  width: 80px;
+  width: 30px;
   height: 1px;
   background-color: var(--color-dark-white);
   display: block;
   position: relative;
   left: 50%;
-  margin-left: -40px;
-  margin-top: 10px;
+  margin-left: -15px;
+  margin-top: 30px;
 }
 
 .project:hover .project__description {

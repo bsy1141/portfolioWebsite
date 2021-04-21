@@ -18,8 +18,9 @@ document.addEventListener('scroll',()=>{
     }
 })
 
-//Scroll to section
+//Scroll to section & active menu
 const navbarMenu=document.querySelector('.navbar__menu');
+const navbarMenuItems=document.querySelectorAll('.navbar__menu__item');
 
 navbarMenu.addEventListener('click',(event)=>{
     const target=event.target;
@@ -30,6 +31,22 @@ navbarMenu.addEventListener('click',(event)=>{
     }
 
     scrollIntoView(link);
+    navbarMenu.classList.remove('open');
+
+    navbarMenuItems.forEach((item)=>{
+        if(item===target){
+            item.classList.add('active');
+        }
+        else item.classList.remove('active');
+    });
+
+});
+
+//when toggle btn is clicked, show navbar menu
+const toggleBtn=document.querySelector('.navbar__toggle_btn');
+
+toggleBtn.addEventListener('click',()=>{
+    navbarMenu.classList.toggle('open');
 });
 
 //if "contact me" button is clicked, Scroll to Contact Section
@@ -64,7 +81,9 @@ document.addEventListener('scroll',()=>{
     }
 });
 
+//Project Filtering & Animation
 const workBtnContainer=document.querySelector('.work__categories');
+//const workBtn=document.querySelectorAll('.category__btn');
 const projectsContainer=document.querySelector('.work__projects');
 const projects=document.querySelectorAll('.project');
 
@@ -73,7 +92,24 @@ workBtnContainer.addEventListener('click',(e)=>{
     //이것을 방지하기 위해 e.target.dataset.filter==unsigned(false)라면 부모의 filter를 가져올 수 있도록 한다.
     const filter=e.target.dataset.filter || e.target.parentNode.dataset.filter;
     
-    projects.forEach((project)=>{
+    const active=document.querySelector('.category__btn.active');
+    active.classList.remove('active');
+
+    const target= e.target.nodeName==="BUTTON" ? e.target : e.target.parentNode;
+    target.classList.add('active');
+    /*
+    workBtn.forEach((btn)=>{
+        if(btn===target){
+            btn.classList.add('active');
+        }
+        else btn.classList.remove('active');
+    });
+    */
+    
+    
+    projectsContainer.classList.add("anim-out");
+    setTimeout(function(){
+        projects.forEach((project)=>{
         const type=project.dataset.type;
         
         if(filter==="*"||filter===type){
@@ -82,5 +118,9 @@ workBtnContainer.addEventListener('click',(e)=>{
         else{
             project.classList.add("invisible");
         }
-    })
+    });
+        projectsContainer.classList.remove("anim-out");
+    },300)
 });
+
+

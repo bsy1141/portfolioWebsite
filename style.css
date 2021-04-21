@@ -465,6 +465,27 @@ p {
   transition: all var(--animation-duration) ease-in;
 }
 
+/*Arrow up button*/
+.arrowup_btn {
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+  font-size: 50px;
+  width: 70px;
+  height: 70px;
+  color: var(--color-white);
+  background-color: var(--color-orange);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--animation-duration) ease-in;
+}
+
+.arrowup_btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 @media screen and (max-width: 768px) {
   .navbar__toggle_btn {
     display: block;

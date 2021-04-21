@@ -9,7 +9,7 @@ function scrollIntoView(selector){
 const navbar=document.querySelector('#navbar');
 const navbarHeight=navbar.getBoundingClientRect().height;
 
-window.addEventListener('scroll',()=>{
+document.addEventListener('scroll',()=>{
     if(window.scrollY>navbarHeight){
         navbar.classList.add('navbar--dark');
     }
@@ -44,6 +44,22 @@ contactBtn.addEventListener('click',()=>{
 const home=document.querySelector('.home__container');
 const homeHeight=home.getBoundingClientRect().height;
 
-window.addEventListener('scroll',()=>{
+document.addEventListener('scroll',()=>{
     home.style.opacity=1-window.scrollY/homeHeight;
+})
+
+//Arrow up Button
+const arrowbtn=document.querySelector('.arrowup_btn');
+
+arrowbtn.addEventListener('click',()=>{
+    scrollIntoView('#home');
+})
+
+document.addEventListener('scroll',()=>{
+    if(window.scrollY>=homeHeight/2){
+        arrowbtn.classList.add('visible');
+    }
+    else{
+        arrowbtn.classList.remove('visible');
+    }
 })

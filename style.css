@@ -172,9 +172,13 @@ p {
   font-weight: var(--weight-bold);
   margin: 24px;
   padding: 8px 12px;
-  border: 2px solid var(--color-dark-orange);
+  border: 2px solid var(--color-white);
   border-radius: var(--size-border-radius);
-  color: var(--color-dark-orange);
+  color: var(--color-white);
+}
+
+.home__contact:hover {
+  background-color: var(--color-medium-orange);
 }
 
 /* About Me */
@@ -312,6 +316,7 @@ p {
   border-radius: var(--size-border-radius);
   background-color: var(--color-white);
   padding: 10px 30px;
+  position: relative;
 }
 
 .category__btn.active,
@@ -321,7 +326,7 @@ p {
 
 .category__btn.active .category__count,
 .category__btn:hover .category__count {
-  top: 0;
+  top: 6.5px;
   opacity: 1;
 }
 
@@ -333,9 +338,8 @@ p {
   width: 20px;
   height: 20px;
   line-height: 20px;
-  position: relative;
-  top: -20px;
-  left: 4px;
+  position: absolute;
+  right: 20px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -350,7 +354,7 @@ p {
 }
 
 .work__projects.anim-out {
-  opacity: 0;
+  opacity: 0.6;
   transform: scale(0.9) translateY(10px);
 }
 
@@ -498,10 +502,23 @@ p {
 }
 
 @media screen and (max-width: 768px) {
+  /*
+  미디어쿼리 안에 변수를 재설정하는 것이 가능.
+  미디어쿼리에 해당되는 것은 이 변수가 적용되고, 아닐 때는 밖에 있는 글로벌 변수가 적용
+  */
+  :root {
+    --font-large: 26px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
   .navbar__toggle_btn {
     display: block;
     z-index: 1;
     position: fixed;
+    top: 16px;
+    right: 16px;
   }
 
   #navbar {
@@ -525,21 +542,52 @@ p {
     display: block;
   }
 
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
   .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
   .major {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   .skillset {
     flex-direction: column;
   }
+
+  .category__btn {
+    margin: 4px 0;
+    width: 60%;
+  }
   .project {
     flex-grow: 1;
   }
+
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
   .testimonial__profile {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
+  }
+  .testimonial__profile:nth-child(even),
+  .testimonial__profile:nth-child(odd) {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+  .arrowup_btn {
+    bottom: 16px;
+    right: 16px;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
   }
 }

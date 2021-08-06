@@ -88,14 +88,12 @@ const projectsContainer=document.querySelector('.work__projects');
 const projects=document.querySelectorAll('.project');
 
 workBtnContainer.addEventListener('click',(e)=>{
-    //span 부분에는 data-filter가 포함되어 있지 않아서 filter가 unsigned로 저장된다.
-    //이것을 방지하기 위해 e.target.dataset.filter==unsigned(false)라면 부모의 filter를 가져올 수 있도록 한다.
-    const filter=e.target.dataset.filter || e.target.parentNode.dataset.filter;
-    
     const active=document.querySelector('.category__btn.active');
     active.classList.remove('active');
 
     const target= e.target.nodeName==="BUTTON" ? e.target : e.target.parentNode;
+    const filter=target.dataset.filter;
+
     target.classList.add('active');
     /*
     workBtn.forEach((btn)=>{
@@ -106,8 +104,8 @@ workBtnContainer.addEventListener('click',(e)=>{
     });
     */
     
-    
     projectsContainer.classList.add("anim-out");
+    
     setTimeout(function(){
         projects.forEach((project)=>{
         const type=project.dataset.type;
@@ -120,7 +118,8 @@ workBtnContainer.addEventListener('click',(e)=>{
         }
     });
         projectsContainer.classList.remove("anim-out");
-    },300)
+    },300);
+    
 });
 
 
